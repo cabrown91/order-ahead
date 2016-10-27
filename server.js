@@ -21,7 +21,7 @@ var bodyParser = require('body-parser');
 
 
 
-
+var controllers = require('./controllers');
 
 
 /**********
@@ -36,6 +36,12 @@ app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+
+/*
+ * JSON API Endpoints
+ */
+
+app.get('/api', controllers.api.index);
 
 
 
