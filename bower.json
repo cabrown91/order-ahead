@@ -1,0 +1,22 @@
+{
+  "name": "order-ahead",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Alicia Brown <cleo.aliciabrown@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/cabrown91/order-ahead",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
