@@ -1,0 +1,25 @@
+{
+  "name": "order-ahead",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabrown91/order-ahead.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cabrown91/order-ahead/issues"
+  },
+  "homepage": "https://github.com/cabrown91/order-ahead#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.5"
+  }
+}
