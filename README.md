@@ -5,11 +5,12 @@ Gangster ipsizzle shizzlin dizzle dope amizzle, doggy adipiscing daahng dawg. Nu
 ##Technologies Used
 1. Facebook Authorization
 2. Angular.js & Javascript
-3. Node.js
-4. MongoDB/Mongoose
-5. Bootstrap
-6. Stripe.js
-7. Heroku
+3. Express.js
+4. Node.js
+5. MongoDB/Mongoose
+6. Bootstrap
+7. Stripe.js
+8. Heroku
 
 
 
