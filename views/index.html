@@ -96,26 +96,37 @@
     });
   }
 </script>
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-<div id="status">
-</div>
-
 <!--End of Facebook Login Code  -->
+
+<!--Nav Bar Code  -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!--Jumbotron header code  -->
 <div class="jumbotron">
   <div class="container">
     <h1>Welcome to Order Ahead!</h1>
     <p>Beat the lines.</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    <!--
+      Below we include the Login Button social plugin. This button uses
+      the JavaScript SDK to present a graphical Login button that triggers
+      the FB.login() function when clicked.
+    -->
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="status">
+    </div>
   </div>
+
+  <!--Landing Page Food Display Code  -->
 </div>
 <div class="row">
   <div class="col-sm-6 col-md-4 col-lg-3">
