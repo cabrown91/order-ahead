@@ -54,40 +54,13 @@ app.get('/api', controllers.api.index);
 
 
 
+app.get('/templates/:name', controllers.api.templates);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ALL OTHER ROUTES (ANGULAR HANDLES)
+// redirect all other paths to index
+app.get('*', function homepage (req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
 
 
 /**********
