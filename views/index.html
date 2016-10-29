@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>Order Ahead</title>
 
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/styles.css">
 
   <!-- VENDOR SCRIPTS -->
   <script src="/vendor/angular/angular.min.js"></script>
@@ -99,21 +101,21 @@
 <!--End of Facebook Login Code  -->
 
 <!--Nav Bar Code  -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="...">
-      </a>
-    </div>
-  </div>
+<nav class="navbar navbar-dark bg-primary">
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      Bootstrap
+    </a>
+</div>
 </nav>
 
 <!--Jumbotron header code  -->
 <div class="jumbotron">
   <div class="container">
-    <h1>Welcome to Order Ahead!</h1>
-    <p>Beat the lines.</p>
+    <h1 class="display-3">Welcome to Order Ahead!</h1>
+    <p class="lead">Beat the lines.</p>
     <!--
       Below we include the Login Button social plugin. This button uses
       the JavaScript SDK to present a graphical Login button that triggers
@@ -125,49 +127,22 @@
     <div id="status">
     </div>
   </div>
+</div>
 
   <!--Landing Page Food Display Code  -->
-</div>
 <div class="row">
   <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="thumbnail">
-      <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    <div class="card">
+      <h3 class="card-header">Featured</h3>
+      <div class="card-block">
+        <h4 class="card-title">Special title treatment</h4>
+        <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" class="img-fluid" alt="Card image">
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="thumbnail">
-      <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="thumbnail">
-      <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="thumbnail">
-      <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
+
+
   </div>
 </div>
 
