@@ -17,12 +17,10 @@ app.use(express.static(__dirname + '/public'));
 // We're placing these under /vendor to differentiate them from our own assets
 app.use('/vendor', express.static(__dirname + '/bower_components'));
 
-
-
-
-
-
-
+// set 'html' as the engine, using ejs's renderFile function
+var ejs = require('ejs');
+app.engine('html', ejs.renderFile);
+app.set('view engine', 'html');
 
 var controllers = require('./controllers');
 
