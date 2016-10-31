@@ -1,198 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+<html lang="en" ng-app="order-ahead">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
 
-  <title>Order Ahead</title>
+    <title>Order Ahead</title>
 
-  <!-- STYLESHEETS -->
-  <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css">
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 
-  <!-- VENDOR SCRIPTS -->
-  <script src="/vendor/angular/angular.min.js"></script>
-  <script src="/vendor/angular-route/angular-route.min.js"></script>
+    <!-- VENDOR SCRIPTS -->
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/angular-route/angular-route.min.js"></script>
 
-  <!-- APPLICATION SCRIPTS -->
-  <script src="/scripts/app.js"></script>
+    <!-- APPLICATION SCRIPTS -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/ItemsIndexController.js"></script>
 
-</head>
-<body>
-  <!--Facebook Log In Code  -->
-<script>
-  // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Log in with Facebook!';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
+  </head>
+  <body>
+    <!--Facebook Log In Code  -->
+    <script>
+      // This is called with the results from from FB.getLoginStatus().
+      function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          // The person is logged into Facebook, but not your app.
+          document.getElementById('status').innerHTML = 'Log in with Facebook!';
+        } else {
+          // The person is not logged into Facebook, so we're not sure if
+          // they are logged into this app or not.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into Facebook.';
+        }
+      }
 
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
+      // This function is called when someone finishes with the Login
+      // Button.  See the onlogin handler attached to it in the sample
+      // code below.
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+      }
 
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1664352330542180',
-    cookie     : true,  // enable cookies to allow the server to access
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use graph api version 2.5
-  });
+      window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1664352330542180',
+        cookie     : true,  // enable cookies to allow the server to access
+                            // the session
+        xfbml      : true,  // parse social plugins on this page
+        version    : 'v2.5' // use graph api version 2.5
+      });
 
-  // Now that we've initialized the JavaScript SDK, we call
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
+      // Now that we've initialized the JavaScript SDK, we call
+      // FB.getLoginStatus().  This function gets the state of the
+      // person visiting this page and can return one of three states to
+      // the callback you provide.  They can be:
+      //
+      // 1. Logged into your app ('connected')
+      // 2. Logged into Facebook, but not your app ('not_authorized')
+      // 3. Not logged into Facebook and can't tell if they are logged into
+      //    your app or not.
+      //
+      // These three cases are handled in the callback function.
 
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
 
-  };
+      };
 
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+      // Load the SDK asynchronously
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-  }
-</script>
-<!--End of Facebook Login Code  -->
+      // Here we run a very simple test of the Graph API after login is
+      // successful.  See statusChangeCallback() for when this call is made.
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('status').innerHTML =
+            'Thanks for logging in, ' + response.name + '!';
+        });
+      }
+    </script>
+  <!--End of Facebook Login Code  -->
 
-<!--Nav Bar Code  -->
-<nav class="navbar navbar-dark bg-primary">
-  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-    <a class="navbar-brand" href="#">
-      <img src="images/favicon-96x96.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      JumpStart
-    </a>
-</div>
-</nav>
+  <!--Nav Bar Code  -->
+    <nav class="navbar navbar-dark bg-primary">
+      <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+        <a class="navbar-brand" href="#">
+          <img src="images/favicon-96x96.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          JumpStart
+        </a>
+    </div>
+    </nav>
 
-<!--Jumbotron header code  -->
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <h1 class="display-3 text-xs-center">Welcome to JumpStart!</h1>
-      <p class="lead text-xs-center">Beat the lines.</p>
-      <!--
-        Below we include the Login Button social plugin. This button uses
-        the JavaScript SDK to present a graphical Login button that triggers
-        the FB.login() function when clicked.
-      -->
-        <div class="fb-login-button" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
-        <div id="status">
+    <!--Jumbotron header code  -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <h1 class="display-3 text-xs-center">Welcome to JumpStart!</h1>
+          <p class="lead text-xs-center">Beat the lines.</p>
+          <!--
+            Below we include the Login Button social plugin. This button uses
+            the JavaScript SDK to present a graphical Login button that triggers
+            the FB.login() function when clicked.
+          -->
+            <div class="fb-login-button" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+            <div id="status">
+            </div>
         </div>
-    </div>
-  </div>
-</div>
-
-  <!--Landing Page Food Display Code  -->
-<div class="row">
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="card">
-      <h3 class="card-header text-xs-center">Featured</h3>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" class="img-fluid" alt="Card image">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Login</a>
-        <a href="#" class="btn btn-primary">Order Now</a>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="card">
-      <h3 class="card-header text-xs-center">Featured</h3>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" class="img-fluid" alt="Card image">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="card">
-      <h3 class="card-header text-xs-center">Featured</h3>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" class="img-fluid" alt="Card image">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="card">
-      <h3 class="card-header text-xs-center">Featured</h3>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <img src="http://grub.gunaxin.com/wp-content/uploads/gallery/french-fries/french-fries-10.jpg" class="img-fluid" alt="Card image">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
-<hr class="my-2">
-  <footer class="footer">
-    <div class="container">
-      <p class="float-xs-right"><a href="#">Back to top</a></p>
-      <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-      <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+    <div ng-view></div>
 
-    </div>
-  </footer>
-  <hr class="my-2">
 
-</body>
+
+    <hr class="my-2">
+      <footer class="footer">
+        <div class="container">
+          <p class="float-xs-right"><a href="#">Back to top</a></p>
+          <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+          <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+
+        </div>
+      </footer>
+      <hr class="my-2">
+  </body>
 </html>
