@@ -44,7 +44,7 @@ app.get('/', function homepage (req, res) {
 
 app.get('/api', controllers.api.index);
 app.get('/api/menu', controllers.items.index);
-
+app.get('/api/menu/:itemId', controllers.items.show);
 
 
 
