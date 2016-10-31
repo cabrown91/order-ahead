@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      <form class="form-horizontal" ng-submit="itemsIndexCtrl.createItem()">
+        <fieldset>
+
+          <legend>Add New Item</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Name</label>
+            <div class="col-md-4">
+            <input id="name" ng-model="itemsIndexCtrl.newItem.itemName" type="text" class="form-control input-md" required="">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Price</label>
+            <div class="col-md-4">
+            <input ng-model="itemsIndexCtrl.newItem.itemPrice" type="number" class="form-control input-md">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Image (url)</label>
+            <div class="col-md-4">
+            <input ng-model="itemsIndexCtrl.newItem.itemImage" type="text" class="form-control input-md" required="">
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Description</label>
+            <div class="col-md-4">
+              <textarea class="form-control" ng-model="itemsIndexCtrl.newItem.itemDescription"></textarea>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Save Item</label>
+            <div class="col-md-4">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<input type="text" class"form-control" ng-model="searchText" placeholder="Search Items">
+<div ng-repeat="item in itemsIndexCtrl.items | orderBy: 'name' | filter: searchText" class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="card card-default">
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-md-3 col-xs-12 col-lg-3 img-thumbnail">
+            <img src={{item.itemImage}} alt="item image">
+          </div>
+
+          <div class="col-md-3 col-xs-12 col-lg-3">
+            <ul class="list-group form-inline">
+              <li class="list-group-item">
+                <h4 class='inline-header'>Item Name:</h4>
+                <span ng-hide="editing"><a ng-href="{{item._id}}">{{item.itemName}}</a></span>
+                <input ng-show="editing" ng-model="item.itemName" type="text" class="form-control input-md">
+              </li>
+
+              <li class="list-group-item">
+                <h4 class="inline-header">Item Price:</h4>
+                <span ng-hide="editing">{{item.itemPrice}}</span>
+                <input ng-show="editing" ng-model="item.itemPrice" type="number" class="form-control input-md">
+              </li>
+
+              <li class="list-group-item">
+                <h4 class='inline-header'>Item Description:</h4>
+                <span ng-hide="editing">{{item.itemDescription}}</span>
+                <input ng-show="editing" ng-model="item.itemDescription" type="text" class="form-control input-md">
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class='card-footer'>
+          <div class='card-footer'>
+            <button class='btn btn-danger' ng-click="itemsIndexCtrl.deleteItem(item)">Delete Item</button>
+            <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Item</button>
+            <button class='btn btn-success' ng-show="editing" ng-click="itemsIndexCtrl.editItem(item); editing = false">Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
