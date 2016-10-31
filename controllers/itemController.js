@@ -6,7 +6,7 @@ var db = require('../models');
 
 
 
-// GET /api/albums
+// GET /api/items
 function index(req, res) {
   db.Item.find({}, function(err, allItems) {
     res.json(allItems);
