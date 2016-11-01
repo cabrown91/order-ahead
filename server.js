@@ -46,11 +46,8 @@ app.get('/api', controllers.api.index);
 app.get('/api/menu', controllers.items.index);
 app.get('/api/menu/:itemId', controllers.items.show);
 app.post('/api/menu', controllers.items.create);
-
-
-
-
-
+app.delete('/api/menu/:itemId', controllers.items.destroy);
+app.put('/api/menu/:itemId', controllers.items.update);
 
 
 app.get('/templates/:name', controllers.api.templates);
