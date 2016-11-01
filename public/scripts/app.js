@@ -14,14 +14,17 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'templates/items',
+      templateUrl: '/templates/items',
       controllerAs: 'itemsIndexCtrl',
       controller: 'ItemsIndexController'
     })
-    .when('/:id', {
-      templateUrl: 'templates/items-show',
-      controllerAs: 'albumsShowCtrl',
-      controller: 'AlbumsShowController'
+    .when('/menu/:id', {
+      templateUrl: '/templates/items-show',
+      controllerAs: 'itemsIndexCtrl',
+      controller: 'ItemsIndexController'
+    })
+    .otherwise({
+      redirectTo: "/"
     });
 
     $locationProvider.html5Mode({
