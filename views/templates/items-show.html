@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card">
+    <h3 class="card-header text-xs-center">Featured</h3>
+    <img ng-src={{item.itemImage}} alt="item image" />
+    <h4 class='card-title'>Item Name:</h4>
+    <span ng-hide="editing">{{itemsIndexCtrl.item.itemName}}</span>
+    <input ng-show="editing" ng-model="itemsIndexCtrl.item.itemName" type="text" class="form-control input-md">
+
+      <h4 class="inline-header">Item Price:</h4>
+      <span ng-hide="editing">${{itemsIndexCtrl.item.itemPrice}}</span>
+      <input ng-show="editing" ng-model="itemsIndexCtrl.item.itemPrice" type="number" class="form-control input-md">
+
+      <h4 class='inline-header'>Item Description:</h4>
+      <span ng-hide="editing">{{itemsIndexCtrl.item.itemDescription}}</span>
+      <input ng-show="editing" ng-model="itemsIndexCtrl.item.itemDescription" type="text" class="form-control input-md">
+
+    <div class='card-footer'>
+      <button class='btn btn-danger' ng-click="itemsIndexCtrl.deleteItem(item)">Delete</button>
+      <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit</button>
+      <button class='btn btn-success' ng-show="editing" ng-click="itemsIndexCtrl.editItem(item); editing = false">Save Changes</button>
+    </div>
+  </div>
+</div>
