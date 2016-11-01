@@ -3,21 +3,24 @@
     <div class="col-md-10 col-md-offset-1">
 
       <form class="form-horizontal" ng-submit="itemsIndexCtrl.createItem()">
-        <fieldset>
 
-          <legend>Add New Item</legend>
+
+          <legend class="text-xs-center">Add New Item</legend>
 
           <!-- Text input-->
+
+
           <div class="form-group">
-            <label class="col-md-4 col-lg-4 control-label">Item Name</label>
-            <div class="col-md-4">
+            <label class="col-md-4 control-label">Item Name</label>
+            <div class="col-md-4 col-lg-4">
               <input id="name" ng-model="itemsIndexCtrl.newItem.itemName" type="text" class="form-control input-md" required="">
             </div>
           </div>
 
+
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 col-lg-4 control-label">Item Price</label>
+            <label class="col-md-4 control-label">Item Price</label>
             <div class="col-md-4">
               <input ng-model="itemsIndexCtrl.newItem.itemPrice" type="number" class="form-control input-md">
             </div>
@@ -41,25 +44,22 @@
 
           <!-- Button -->
           <div class="form-group">
-            <label class="col-md-4 control-label">Save Item</label>
             <div class="col-md-4">
               <button class="btn btn-primary">Submit</button>
             </div>
           </div>
-      </fieldset>
     </form>
-  </div>
 </div>
 
 <input type="text" class"form-control" ng-model="searchText" placeholder="Search Items">
   <div class="row">
     <div ng-repeat="item in itemsIndexCtrl.items | orderBy: 'name' | filter: searchText">
-
       <div class="col-md-3 col-xs-12 col-lg-3">
         <div class="card">
-          <img src={{item.itemImage}} alt="item image">
-          <h4 class='card-header'>Item Name:</h4>
-          <span ng-hide="editing"><a ng-href="{{item._id}}">{{item.itemName}}</a></span>
+          <h3 class="card-header text-xs-center">Featured</h3>
+          <img ng-src={{item.itemImage}} alt="item image" />
+          <h4 class='card-title'>Item Name:</h4>
+          <span ng-hide="editing"><a ng-href="/menu/{{item._id}}">{{item.itemName}}</a></span>
           <input ng-show="editing" ng-model="item.itemName" type="text" class="form-control input-md">
 
             <h4 class="inline-header">Item Price:</h4>
@@ -71,8 +71,8 @@
             <input ng-show="editing" ng-model="item.itemDescription" type="text" class="form-control input-md">
 
         <div class='card-footer'>
-          <button class='btn btn-danger' ng-click="itemsIndexCtrl.deleteItem(item)">Delete Item</button>
-          <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Item</button>
+          <button class='btn btn-danger' ng-click="itemsIndexCtrl.deleteItem(item)">Delete</button>
+          <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit</button>
           <button class='btn btn-success' ng-show="editing" ng-click="itemsIndexCtrl.editItem(item); editing = false">Save Changes</button>
         </div>
       </div>
