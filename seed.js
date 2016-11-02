@@ -30,15 +30,23 @@ itemList.push({
             });
 
 
+var cart = {items: []};
+cart.items = itemList;
 
 
 db.Item.remove({}, function(err, items){
+  db.Cart.remove({}, function(err, carts){
+    
+    db.Item.create(itemList, function(err, items){
+      if (err) { return console.log('ERROR', err); }
+      console.log("all items:", items);
+      console.log("created", items.length, "items");
+    });
 
-  db.Item.create(itemList, function(err, items){
-    if (err) { return console.log('ERROR', err); }
-    console.log("all items:", items);
-    console.log("created", items.length, "items");
-    process.exit();
+    db.Cart.create(cart, function(err, cart) {
+      if (err) { return console.log('ERROR', err); }
+      console.log('the cart:', cart);
+      process.exit();
+    });
   });
-
 });
