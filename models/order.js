@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var OrderSchema = new Schema({
-  orderItems: [ String ],
+  orderItems: [ Object ],
   orderTotal: Number,
   pickUpTime: String
 });
