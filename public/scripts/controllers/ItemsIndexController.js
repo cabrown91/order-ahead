@@ -38,7 +38,7 @@ function ItemsIndexController($http, $routeParams, $location) {
   vm.editItem = function (item) {
     $http({
       method: 'PUT',
-      url: '/api/menu/'+$routeParams.id,
+      url: '/api/menu/'+item._id,
       data: item
     }).then(function successCallback(json) {
       // don't need to do anything!
@@ -50,7 +50,7 @@ function ItemsIndexController($http, $routeParams, $location) {
   vm.deleteItem = function (item) {
     $http({
       method: 'DELETE',
-      url: '/api/menu/'+$routeParams.id
+      url: '/api/menu/'+item._id,
     }).then(function successCallback(json) {
       var index = vm.items.indexOf(item);
       vm.items.splice(index,1);
