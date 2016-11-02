@@ -6,6 +6,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+app.set('port', (process.env.PORT || 3000));
+
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
@@ -64,6 +66,6 @@ app.get('*', function homepage (req, res) {
  **********/
 
 // listen on port 3000
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Express server is running on http://localhost:3000/');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
