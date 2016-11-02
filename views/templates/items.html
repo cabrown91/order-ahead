@@ -57,7 +57,7 @@
       <div class="col-md-3 col-xs-12 col-lg-3">
         <div class="card">
           <h3 class="card-header text-xs-center">Featured</h3>
-          <img ng-src={{item.itemImage}} alt="item image" />
+          <img class="card-img" ng-src={{item.itemImage}} alt="item image" />
           <h4 class='card-title'>Item Name:</h4>
           <span ng-hide="editing"><a ng-href="/menu/{{item._id}}">{{item.itemName}}</a></span>
           <input ng-show="editing" ng-model="item.itemName" type="text" class="form-control input-md">
