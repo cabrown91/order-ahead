@@ -50,6 +50,8 @@ app.post('/api/menu', controllers.items.create);
 app.delete('/api/menu/:itemId', controllers.items.destroy);
 app.put('/api/menu/:itemId', controllers.items.update);
 
+app.get('/api/cart/:cartId', controllers.cartsItems.index);
+app.delete('/api/cart/:cartId/:itemId', controllers.cartsItems.destroy);
 
 app.get('/templates/:name', controllers.api.templates);
 
