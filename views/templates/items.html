@@ -63,7 +63,7 @@
           <input ng-show="editing" ng-model="item.itemName" type="text" class="form-control input-md">
 
             <h4 class="inline-header">Item Price:</h4>
-            <span ng-hide="editing">${{item.itemPrice}}</span>
+            <span ng-hide="editing">{{item.itemPrice | currency}}</span>
             <input ng-show="editing" ng-model="item.itemPrice" type="number" class="form-control input-md">
 
             <h4 class='inline-header'>Item Description:</h4>
