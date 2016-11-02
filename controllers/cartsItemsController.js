@@ -7,14 +7,18 @@ function index(req, res) {
   });
 }
 
-
-
-
-
-
-
-
-
+//not sure if this is what I want. I think I should be adding already known items to the cart, not creating new items here.
+function create(req, res) {
+  db.Cart.findById(req.params.cartId, function(err, foundCart) {
+    console.log(req.body);
+    var newItem = db.Item.findById(req.params.itemId);
+    foundCart.items.put(newItem);
+    foundCart.save(function(err, savedCart) {
+      console.log('newItem created:', newItem);
+      res.json(newItem);
+    });
+  });
+}
 
 
 function destroy(req, res) {
@@ -39,36 +43,8 @@ function destroy(req, res) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
   index: index,
+  create: create,
   destroy: destroy
 };
