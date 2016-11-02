@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <h3 class="card-header text-xs-center">Featured</h3>
-    <img ng-src={{itemsIndexCtrl.item.itemImage}} alt="item image" />
+    <img class="card-img" ng-src={{itemsIndexCtrl.item.itemImage}} alt="item image" />
     <h4 class='card-title'>Item Name:</h4>
     <span ng-hide="editing">{{itemsIndexCtrl.item.itemName}}</span>
     <input ng-show="editing" ng-model="itemsIndexCtrl.item.itemName" type="text" class="form-control input-md">
