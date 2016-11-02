@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect(MONGODB_URI||"mongodb://localhost/order-ahead");
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/order-ahead");
 
 var Employee = require('./employee');
 var Item = require('./item');
