@@ -8,10 +8,11 @@ With JumpStart, a company employee can view the lunch menu for the day or week, 
 
 ###Wireframes
 **Landing Page**
-![screen shot 2016-11-03 at 12 28 36 pm](https://cloud.githubusercontent.com/assets/19937807/19981920/22ec986c-a1c1-11e6-9728-146a01d26309.png)
+<img width="250" src="https://cloud.githubusercontent.com/assets/19937807/19981920/22ec986c-a1c1-11e6-9728-146a01d26309.png">
+
 
 **Menu Page**
-![screen shot 2016-11-03 at 12 28 05 pm](https://cloud.githubusercontent.com/assets/19937807/19981921/23036b78-a1c1-11e6-9260-9f7c74d5ff09.png)
+<img width="250" src="https://cloud.githubusercontent.com/assets/19937807/19981921/23036b78-a1c1-11e6-9260-9f7c74d5ff09.png">
 
 The most major difference between my initial wireframes and the actual app is that I decided to go with a single-page app design (at least for now).
 
