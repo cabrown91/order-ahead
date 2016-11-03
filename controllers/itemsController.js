@@ -23,13 +23,13 @@ function create(req, res) {
   });
 }
 
-function show(req, res) {
-  db.Item.findById(req.params.itemId, function(err, foundItem) {
-    if(err) { console.log('itemsController.show error', err); }
-    console.log('itemsController.show responding with', foundItem);
-    res.json(foundItem);
-  });
-}
+// function show(req, res) {
+//   db.Item.findById(req.params.itemId, function(err, foundItem) {
+//     if(err) { console.log('itemsController.show error', err); }
+//     console.log('itemsController.show responding with', foundItem);
+//     res.json(foundItem);
+//   });
+// }
 
 function destroy(req, res) {
   db.Item.findOneAndRemove({ _id: req.params.itemId }, function(err, foundItem){
@@ -62,7 +62,7 @@ function update(req, res) {
 module.exports = {
   index: index,
   create: create,
-  show: show,
+  // show: show,
   destroy: destroy,
   update: update
 };
