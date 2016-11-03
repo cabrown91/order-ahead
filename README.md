@@ -18,6 +18,12 @@ The most major difference between my initial wireframes and the actual app is th
 ###User Stories
 Check out the user stories for JumpStart on <a href="https://trello.com/b/19PBzKNf/lunch-app"> Trello
 
+**Examples:**
+1. As a user, I want to be able to add items to the menu
+2. As a user, I want to be able to update items on the menu
+3. As a user, I want to be able to delete items from the menu
+4. As a user, I want to be able to add an item from the menu to my cart
+
 
 ###ERD Diagram
 ![screen shot 2016-11-03 at 12 25 44 pm](https://cloud.githubusercontent.com/assets/19937807/19981818/b567be98-a1c0-11e6-8c76-cba2986d15a5.png)
