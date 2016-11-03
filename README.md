@@ -6,6 +6,10 @@ What motivated me to build this app was a consistent issue I noticed while worki
 ###The Solution: JumpStart
 With JumpStart, a company employee can view the lunch menu for the day or week, see the prices, ingredients/description. The employee can also log in using Facebook, which is especially ideal for companies that use Facebook for Work. By logging in, the employee has the opportunity to order their lunch from their phone, check-out, and pick up their lunch from the cafeteria at their convenience.
 
+
+###ERD Diagram
+![screen shot 2016-11-03 at 12 25 44 pm](https://cloud.githubusercontent.com/assets/19937807/19981818/b567be98-a1c0-11e6-8c76-cba2986d15a5.png)
+
 ##Technologies Used
 1. Facebook Login
 2. Angular.js & Javascript
