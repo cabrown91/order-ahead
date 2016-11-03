@@ -45,13 +45,13 @@ app.get('/', function homepage (req, res) {
 
 app.get('/api', controllers.api.index);
 app.get('/api/menu', controllers.items.index);
-app.get('/api/menu/:itemId', controllers.items.show);
+// app.get('/api/menu/:itemId', controllers.items.show);
 app.post('/api/menu', controllers.items.create);
 app.delete('/api/menu/:itemId', controllers.items.destroy);
 app.put('/api/menu/:itemId', controllers.items.update);
 
-app.get('/api/cart/:cartId', controllers.cartsItems.index);
-app.delete('/api/cart/:cartId/:itemId', controllers.cartsItems.destroy);
+app.get('/api/carts/:cartId', controllers.cartsItems.index);
+app.delete('/api/carts/:cartId/items/:itemId', controllers.cartsItems.destroy);
 
 app.get('/templates/:name', controllers.api.templates);
 
