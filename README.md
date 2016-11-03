@@ -17,10 +17,10 @@ The most major difference between my initial wireframes and the actual app is th
 
 ###User Stories
 
-Examples:
-1. As a user, I want to be able to add items to the menu
-2. As a user, I want to be able to update items on the menu
-3. As a user, I want to be able to delete items from the menu
+Examples: <br>
+1. As a user, I want to be able to add items to the menu <br>
+2. As a user, I want to be able to update items on the menu <br>
+3. As a user, I want to be able to delete items from the menu <br>
 4. As a user, I want to be able to add an item from the menu to my cart
 
 
