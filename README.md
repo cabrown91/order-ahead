@@ -44,10 +44,10 @@ The biggest challenge I faced building this app was getting the logic for the sh
 I re-learned MEAN stack and built the app within a week. Implementing Angular successfully was a huge win and brought with it some extra features, such as the search functionality. Additionally, I chose to upgrade from Bootstrap 3 to Bootstrap 4, which brought a few of its own challenges, but all in all, it came out well.
 
 
-###Future Development Ideas
+##Future Development Ideas
 Stripe.js (or some other payment technology)
 
-###Instructions to Run Locally
+##Instructions to Run Locally
 1. Clone this repo using git by running ```git clone [repo link]``` in your terminal
 2. Run ```npm install``` in your terminal to install all npm dependencies
 3. Run ```bower install``` in your terminal to install all bower dependencies
