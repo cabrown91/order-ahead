@@ -7,8 +7,13 @@ What motivated me to build this app was a consistent issue I noticed while worki
 With JumpStart, a company employee can view the lunch menu for the day or week, see the prices, ingredients/description. The employee can also log in using Facebook, which is especially ideal for companies that use Facebook for Work. By logging in, the employee has the opportunity to order their lunch from their phone, check-out, and pick up their lunch from the cafeteria at their convenience.
 
 ###Wireframes
+Landing Page
 ![screen shot 2016-11-03 at 12 28 36 pm](https://cloud.githubusercontent.com/assets/19937807/19981920/22ec986c-a1c1-11e6-9728-146a01d26309.png)
+
+Menu Page
 ![screen shot 2016-11-03 at 12 28 05 pm](https://cloud.githubusercontent.com/assets/19937807/19981921/23036b78-a1c1-11e6-9260-9f7c74d5ff09.png)
+
+The most major difference between my initial wireframes and the actual app is that I decided to go with a single-page app design (at least for now).
 
 
 ###ERD Diagram
