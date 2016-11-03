@@ -15,7 +15,7 @@
     <!-- Text input-->
     <div class="form-group">
       <label for="itemPrice" class="col-md-4 control-label">Item Price</label>
-      <input id="itemPrice" ng-model="itemsIndexCtrl.newItem.itemPrice" type="number" placeholder="Enter ItemPrice" class="form-control">
+      <input id="itemPrice" ng-model="itemsIndexCtrl.newItem.itemPrice" type="number" placeholder="Enter ItemPrice" class="form-control" required="">
     </div>
 
     <!-- Text input-->
@@ -38,6 +38,7 @@
     </div>
   </form>
 </div>
+<br>
 
 
 <div class="container">
@@ -50,6 +51,8 @@
     </div>
   </div>
 </div>
+<br>
+<br>
 
 
 
@@ -74,7 +77,7 @@
             <input ng-show="editing" ng-model="item.itemDescription" type="text" class="form-control input-md">
 
         <div class='card-footer'>
-          <button type="button" ng-hide="editing" class="btn btn-success">Add To Order</button>
+          <button class="btn btn-success" ng-click="cartsShowCtrl.createItem(item)" ng-hide="editing">Add To Order</button>
           <button class='btn btn-danger' ng-click="itemsIndexCtrl.deleteItem(item)">Delete</button>
           <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit</button>
           <button class='btn btn-success' ng-show="editing" ng-click="itemsIndexCtrl.editItem(item); editing = false">Save Changes</button>
