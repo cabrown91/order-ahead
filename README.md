@@ -16,7 +16,7 @@ With JumpStart, a company employee can view the lunch menu for the day or week, 
 The most major difference between my initial wireframes and the actual app is that I decided to go with a single-page app design (at least for now).
 
 ###User Stories
-Check out the user stories for JumpStart on <a href="https://trello.com/b/19PBzKNf/lunch-app"> Trello
+Check out the user stories for JumpStart on <a href="https://trello.com/b/19PBzKNf/lunch-app">Trello
 
 **Examples:**
 1. As a user, I want to be able to add items to the menu
