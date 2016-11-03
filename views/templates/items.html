@@ -1,4 +1,12 @@
 <div class="container">
+  <div class="form-group row">
+    <label for="searchText" class="col-md-4 col-xs-2">Search For An Item</label>
+    <div class="col-xs-10">
+      <input id="searchText" type="text" class"form-control" ng-model="searchText" placeholder="Item Name">
+    </div>
+  </div>
+
+
   <form class="form-horizontal" ng-submit="itemsIndexCtrl.createItem()">
 
     <legend class="text-xs-center">Add New Item</legend>
@@ -38,7 +46,6 @@
   </form>
 </div>
 
-<input type="text" class"form-control" ng-model="searchText" placeholder="Search Items">
   <div class="row">
     <div ng-repeat="item in itemsIndexCtrl.items | orderBy: 'name' | filter: searchText">
       <div class="col-md-3 col-xs-12 col-lg-3">
@@ -58,6 +65,7 @@
             <input ng-show="editing" ng-model="item.itemDescription" type="text" class="form-control input-md">
 
         <div class='card-footer'>
+          <button type="button" class="btn btn-success">Add To Order</button>
           <button class='btn btn-danger' ng-click="itemsIndexCtrl.deleteItem(item)">Delete</button>
           <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit</button>
           <button class='btn btn-success' ng-show="editing" ng-click="itemsIndexCtrl.editItem(item); editing = false">Save Changes</button>
