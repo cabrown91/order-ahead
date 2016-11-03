@@ -7,3 +7,7 @@ footer {
 footer p {
     margin-bottom: .25rem;
 }
+
+.jumbotron {
+  background-color: white;
+}
