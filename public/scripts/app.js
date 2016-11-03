@@ -18,14 +18,19 @@ function config ($routeProvider, $locationProvider) {
       controllerAs: 'itemsIndexCtrl',
       controller: 'ItemsIndexController'
     })
-    .when('/menu/:id', {
-      templateUrl: '/templates/items-show',
-      controllerAs: 'itemsIndexCtrl',
-      controller: 'ItemsIndexController'
+    .when('/carts/:cartId', {
+      templateUrl: '/templates/carts',
+      controllerAs: 'cartsItemsCtrl',
+      controller: 'cartsItemsController'
     })
-    .otherwise({
-      redirectTo: "/"
+    .when('/carts/:cartId/items/:itemId', {
+      templateUrl: '/templates/carts-show',
+      controllerAs: 'cartsItemsCtrl',
+      controller: 'cartsItemsController'
     });
+    // .otherwise({
+    //   redirectTo: "/"
+    // });
 
     $locationProvider.html5Mode({
       enabled: true,
