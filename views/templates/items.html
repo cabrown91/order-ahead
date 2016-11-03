@@ -1,54 +1,41 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+  <form class="form-horizontal" ng-submit="itemsIndexCtrl.createItem()">
 
-      <form class="form-horizontal" ng-submit="itemsIndexCtrl.createItem()">
+    <legend class="text-xs-center">Add New Item</legend>
 
+    <!-- Text input-->
 
-          <legend class="text-xs-center">Add New Item</legend>
-
-          <!-- Text input-->
-
-
-          <div class="form-group">
-            <label class="col-md-4 control-label">Item Name</label>
-            <div class="col-md-4 col-lg-4">
-              <input id="name" ng-model="itemsIndexCtrl.newItem.itemName" type="text" class="form-control input-md" required="">
-            </div>
-          </div>
+    <div class="form-group">
+      <label for="itemName" class="col-md-4 control-label">Item Name</label>
+      <input id="itemName" ng-model="itemsIndexCtrl.newItem.itemName" type="text" class="form-control" placeholder="Enter Item Name" required="">
+    </div>
 
 
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label">Item Price</label>
-            <div class="col-md-4">
-              <input ng-model="itemsIndexCtrl.newItem.itemPrice" type="number" class="form-control input-md">
-            </div>
-          </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label for="itemPrice" class="col-md-4 control-label">Item Price</label>
+      <input id="itemPrice" ng-model="itemsIndexCtrl.newItem.itemPrice" type="number" placeholder="Enter ItemPrice" class="form-control">
+    </div>
 
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label">Item Image (url)</label>
-            <div class="col-md-4">
-              <input ng-model="itemsIndexCtrl.newItem.itemImage" type="text" class="form-control input-md" required="">
-            </div>
-          </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label for="itemImage" class="col-md-4 control-label">Item Image (url)</label>
+      <input id="itemImage" ng-model="itemsIndexCtrl.newItem.itemImage" type="text" placeholder="i.e. http://itemimageurl.com" class="form-control" required="">
+    </div>
 
-          <!-- Textarea -->
-          <div class="form-group">
-            <label class="col-md-4 control-label">Item Description</label>
-            <div class="col-md-4">
-              <textarea class="form-control" ng-model="itemsIndexCtrl.newItem.itemDescription"></textarea>
-            </div>
-          </div>
+    <!-- Textarea -->
+    <div class="form-group">
+      <label for="itemDescription" class="col-md-4 control-label">Item Description</label>
+      <textarea id="itemDescription" placeholder="Enter Item Description" class="form-control" ng-model="itemsIndexCtrl.newItem.itemDescription"></textarea>
+    </div>
 
-          <!-- Button -->
-          <div class="form-group">
-            <div class="col-md-4">
-              <button class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-    </form>
+    <!-- Button -->
+    <div class="form-group">
+      <div class="col-md-4">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
 </div>
 
 <input type="text" class"form-control" ng-model="searchText" placeholder="Search Items">
@@ -57,9 +44,9 @@
       <div class="col-md-3 col-xs-12 col-lg-3">
         <div class="card">
           <h3 class="card-header text-xs-center">Featured</h3>
-          <img class="card-img" ng-src={{item.itemImage}} alt="item image" />
+          <img class="img-fluid" ng-src={{item.itemImage}} alt="item image" />
           <h4 class='card-title'>Item Name:</h4>
-          <span ng-hide="editing"><a ng-href="/menu/{{item._id}}">{{item.itemName}}</a></span>
+          <span ng-hide="editing">{{item.itemName}}</span>
           <input ng-show="editing" ng-model="item.itemName" type="text" class="form-control input-md">
 
             <h4 class="inline-header">Item Price:</h4>
