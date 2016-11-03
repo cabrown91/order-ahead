@@ -18,7 +18,7 @@ The most major difference between my initial wireframes and the actual app is th
 ###User Stories
 Check out the user stories for JumpStart on Trello <a href="https://trello.com/b/19PBzKNf/lunch-app">
 
-**Examples:**
+Examples:
 1. As a user, I want to be able to add items to the menu
 2. As a user, I want to be able to update items on the menu
 3. As a user, I want to be able to delete items from the menu
