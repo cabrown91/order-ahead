@@ -1,4 +1,6 @@
 # Order Ahead
+Check out the app on <a href="http://order-ahead.herokuapp.com/">Heroku
+
 ##Concept
 ###Motivation For The App
 What motivated me to build this app was a consistent issue I noticed while working at the corporate offices of companies such as Apple, eBay, and Gap. I noticed that, these companies, and many more, have in-house chefs that create lunch at several stations within the cafeteria. Additionally, there were cafeterias in other buildings which belonged to the company. However, there was no clear, consistent, or time-efficient way to know what the offerings were on any given day or week. Not only that, there was no way to order lunch without having to figure out how to work the cafeteria lunch time around meetings.
