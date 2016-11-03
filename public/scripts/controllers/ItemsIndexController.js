@@ -1,7 +1,3 @@
-console.log('working!!!');
-
-
-
 angular
   .module('order-ahead')
   .controller('ItemsIndexController', ItemsIndexController);
@@ -9,8 +5,6 @@ angular
 ItemsIndexController.inject = ['$http', '$routeParams','$location'];
 
 function ItemsIndexController($http, $routeParams, $location) {
-  var param = $routeParams.id;
-  console.log(param);
   var vm = this;
   vm.newItem = {};
 
@@ -50,7 +44,7 @@ function ItemsIndexController($http, $routeParams, $location) {
   vm.deleteItem = function (item) {
     $http({
       method: 'DELETE',
-      url: '/api/menu/'+item._id,
+      url: '/api/menu/'+item._id
     }).then(function successCallback(json) {
       var index = vm.items.indexOf(item);
       vm.items.splice(index,1);
@@ -58,17 +52,6 @@ function ItemsIndexController($http, $routeParams, $location) {
       console.log('There was an error deleting the data', response);
     });
   };
-
-
-
-  $http({
-    method: 'GET',
-    url: '/api/menu/'+$routeParams.id
-  }).then(function successCallback(json) {
-    vm.item = json.data;
-  }, function errorCallback(response) {
-    console.log('There was an error getting the data', response);
-  });
 
 
 }
