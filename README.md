@@ -46,3 +46,12 @@ I re-learned MEAN stack and built the app within a week. Implementing Angular su
 
 ###Future Development Ideas
 Stripe.js (or some other payment technology)
+
+###Instructions to Run Locally
+1. Clone this repo using git by running ```git clone [repo link]``` in your terminal
+2. Run ```npm install``` in your terminal to install all npm dependencies
+3. Run ```bower install``` in your terminal to install all bower dependencies
+4. Run ```mongod``` in your terminal to start the MongoDB database
+5. Run ```node seed.js``` in your terminal to seed the database with the seed data
+6. Run ```nodemon``` in your terminal to run the Node server
+7. Navigate to Localhost:3000 to view the app locally
